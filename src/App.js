@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+import Form from './component/Form/Form.js';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
           {description}
         </p>
+        <Form/>
       </div>
     );
   }
