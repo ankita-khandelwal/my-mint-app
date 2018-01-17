@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Label from '../Label/Label.js'
+import PropTypes from 'prop-types'
 
 class Checkbox extends Component {
   state = {
@@ -22,24 +24,21 @@ class Checkbox extends Component {
 
     return (
       <div className="checkbox">
-        <label>
-          <input
-            type="checkbox"
-            value={label}
-            checked={isChecked}
-            onChange={this.toggleCheckboxChange}
-          />
-          {label}
-        </label>
+        <input
+          type="checkbox"
+          value={label}
+          checked={isChecked}
+          onChange={this.toggleCheckboxChange}
+        />
+        <Label label={label}/>
       </div>
     );
   }
 }
 
-//
-// Checkbox.propTypes = {
-//   label: PropTypes.string.isRequired,
-//   handleCheckboxChange: PropTypes.func.isRequired,
-// };
+Checkbox.propTypes = {
+  label: PropTypes.string.isRequired,
+  handleCheckboxChange: PropTypes.func.isRequired,
+};
 
 export default Checkbox;
