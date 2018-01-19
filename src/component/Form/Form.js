@@ -3,7 +3,7 @@ import Checkbox from '../Checkbox/Checkbox.js';
 
 const items = ['One', 'Two', 'Three'];
 
-class Form extends Component {
+export default class Form extends Component {
 
   handleFormSubmit = () => {
     console.log('Form Submit');
@@ -33,5 +33,3 @@ class Form extends Component {
     )
   }
 }
-
-export default Form

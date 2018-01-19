@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Label extends Component {
+export default class Label extends Component {
 
   render() {
     const {label} = this.props;
@@ -10,5 +10,3 @@ class Label extends Component {
     );
   }
 }
-
-export default Label;

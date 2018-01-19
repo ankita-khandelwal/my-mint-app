@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Label from '../Label/Label.js'
 import PropTypes from 'prop-types'
 
-class Checkbox extends Component {
+export default class Checkbox extends Component {
   state = {
     isChecked: false,
   };
@@ -40,5 +40,3 @@ Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   handleCheckboxChange: PropTypes.func.isRequired,
 };
-
-export default Checkbox;
