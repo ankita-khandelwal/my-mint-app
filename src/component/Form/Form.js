@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Button from "../Button/Button";
 
 export default class Form extends Component {
 
@@ -14,6 +15,10 @@ export default class Form extends Component {
     return (
       <form onSubmit={this.handleFormSubmit}>
         {createFormContents(params)}
+        <Button
+          handleButtonClick={this.handleFormSubmit}
+          label="Submit"
+        />
       </form>
     )
   }
