@@ -1,37 +1,29 @@
 import React, {Component} from 'react';
-import Checkbox from '../Checkbox/Checkbox.js';
+import PropTypes from 'prop-types';
+import Button from "../Button/Button";
 
-const items = ['One', 'Two', 'Three'];
-
-class Form extends Component {
+export default class Form extends Component {
 
   handleFormSubmit = () => {
     console.log('Form Submit');
   };
 
-  createCheckboxes = (items) => (
-    items.map(this.createCheckbox)
-  );
-
-  toggleCheckbox = label => {
-    console.log(label + ': checkbox toggled');
-  };
-
-  createCheckbox = label => (
-    <Checkbox
-      label={label}
-      handleCheckboxChange={this.toggleCheckbox}
-      key={label}
-    />
-  );
-
   render() {
+    const {createFormContents} = this.props;
+    const {params} = this.props;
+
     return (
       <form onSubmit={this.handleFormSubmit}>
-        {this.createCheckboxes(items)}
+        {createFormContents(params)}
+        <Button
+          handleButtonClick={this.handleFormSubmit}
+          label="Submit"
+        />
       </form>
     )
   }
 }
 
-export default Form
+Form.propTypes = {
+  createFormContents: PropTypes.func.isRequired,
+};

@@ -2,8 +2,28 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import Form from './component/Form/Form.js';
 import './App.css';
+import Checkbox from "./component/Checkbox/Checkbox";
+
+const items = ['One', 'Two', 'Three'];
 
 class App extends Component {
+
+  createCheckboxes = (items) => (
+    items.map(this.createCheckbox)
+  );
+
+  toggleCheckbox = label => {
+    console.log(label + ': checkbox toggled');
+  };
+
+  createCheckbox = label => (
+    <Checkbox
+      label={label}
+      handleCheckboxChange={this.toggleCheckbox}
+      key={label}
+    />
+  );
+
   render() {
     const description = 'this is a description';
     return (
@@ -16,7 +36,10 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
           {description}
         </p>
-        <Form/>
+        <Form
+          createFormContents={this.createCheckboxes}
+          params={items}
+        />
       </div>
     );
   }
